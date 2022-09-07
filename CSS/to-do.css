@@ -1,0 +1,111 @@
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(0deg, #e3ffe7 0%, #d9e7ff 100%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+.container {
+  height: 100vh;
+  display: grid;
+  padding: 10px;
+  grid-template-columns: clamp(250px, 35%, 400px) 1fr;
+}
+.left-side {
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  height: 100%;
+  padding: 20px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+.left-side form {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 1.2em;
+  height: 100%;
+}
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  outline: none;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 1.1rem;
+}
+.left-side #form-title {
+}
+.left-side #form-description {
+}
+.left-side #form-save {
+  background-color: darkgreen;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.right-side {
+  border: 1px solid #ddd;
+  height: 100%;
+  border-radius: 5px;
+  padding: 20px;
+  overflow-y: auto;
+}
+.right-side table {
+  width: 100%;
+  text-align: left;
+}
+.right-side .bottom-border {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+  color: #444;
+}
+.right-side td:last-child,
+.right-side th:last-child {
+  text-align: right;
+}
+.right-side tr {
+  display: grid;
+  grid-template-columns: min(30%, 200px) 1fr 10%;
+  padding: 10px 15px;
+  align-items: center;
+  margin: 5px 0;
+  border-radius: 3px;
+  transition: 0.2s;
+  cursor: default;
+}
+.right-side tr:not(.bottom-border) {
+  border: 1px solid #ddd;
+}
+.right-side tr:hover:not(.bottom-border) {
+  background-color: rgba(0, 0, 0, 0.075);
+}
+.right-side .delete-icon {
+  cursor: pointer;
+  background-color: #ca0b00;
+  color: #fff;
+  padding: 2px 5px;
+}
+
+/* Media Query For Responsive */
+@media screen and (max-width: 850px) {
+  .container {
+    display: block;
+    height: auto;
+  }
+  .left-side {
+    height: 60vh;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  .right-side {
+    height: 60vh;
+  }
+}
